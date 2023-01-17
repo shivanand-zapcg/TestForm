@@ -1,24 +1,21 @@
-import logo from './logo.svg';
+import { useEffect, useState } from 'react';
 import './App.css';
+import { FormPage } from './pages/from';
 
 function App() {
+
+  const [form, setForm] = useState([])
+  useEffect(() => {
+    // console.log(form)
+    return () => {
+    }
+  }, [form])
+  const updateForm = (object) =>{
+    console.log(object)
+  }
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <FormPage update= {updateForm}/>
   );
 }
 
